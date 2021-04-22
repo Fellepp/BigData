@@ -1,0 +1,3 @@
+#/bin/bash
+
+ip=$(hostname -I | cut -d' ' -f1) && sed -i "s/c.JupyterApp.ip.*/c.JupyterApp.ip='$ip'/g" /home/fleppy/.jupyter/jupyter_lab_config.py && sed -i "s/c.NotebookApp.ip.*/c.NotebookApp.ip='$ip'/g" /home/fleppy/.jupyter/jupyter_notebook_config.py
